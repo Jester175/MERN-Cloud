@@ -1,0 +1,138 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 479px;
+  padding: 20px 30px;
+  border-radius: 27px;
+  background: var(--color-background-form);
+  backdrop-filter: blur(30px);
+  overflow: hidden;
+}
+
+.wrapper::after {
+  position: absolute;
+  z-index: 4;
+  display: block;
+  width: 60px;
+  height: 1000px;
+  content: "";
+  transition: opacity 0.3s;
+  transform: rotate(45deg);
+  animation: move 6s infinite;
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.title {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  padding-right: 50px;
+  max-width: fit-content;
+  font-family: var(--font-Iceland);
+  font-size: 40px;
+  font-weight: 400;
+  border-bottom: var(--border-title);
+}
+
+.descr {
+  margin-bottom: 50px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.label {
+  margin: 0;
+  color: var(--text-color1);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.error {
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  font-size: 14px;
+  color: var(--error);
+}
+
+.input {
+  margin: 0;
+  padding: 16px 0px 16px 15px;
+  border-radius: 7px;
+  opacity: 0.5;
+  background: var(--color-background-f1);
+  backdrop-filter: blur(30px);
+}
+
+.input::placeholder {
+  color: var(--text-color2);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.input:focus {
+  outline: 1px solid var(--text-color2);
+}
+
+.send {
+  padding: 16px 0;
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(92, 149, 255, 1) 64%,
+    rgba(65, 94, 182, 1) 100%
+  );
+  border-radius: 7px;
+  text-transform: uppercase;
+  color: var(--text-color2);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.send:focus {
+  outline: 1px solid var(--text-color2);
+}
+
+.link {
+  align-self: center;
+  text-transform: capitalize;
+  color: var(--text-color1);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+@keyframes move {
+  0% {
+    top: -480px;
+    left: 0;
+  }
+  100% {
+    top: calc(100% - 50px);
+    left: calc(100% - 50px);
+  }
+}

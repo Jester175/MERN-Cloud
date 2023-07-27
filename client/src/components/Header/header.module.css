@@ -1,0 +1,41 @@
+.header {
+  position: relative;
+  width: 100%;
+  padding: 10px 0px;
+  background-image: url("../../assets/images/header_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.storm1,
+.storm2 {
+  position: absolute;
+}
+
+.storm1 {
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%);
+}
+
+.storm2 {
+  top: 20%;
+  left: 40%;
+  transform: translateY(-20%);
+}
+
+.logout {
+  cursor: pointer;
+}
+
+.exit {
+  width: 25px;
+  height: 30px;
+}

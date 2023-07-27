@@ -1,0 +1,53 @@
+.footer {
+  margin-top: auto;
+  padding: 10px 0px;
+}
+
+.footer > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 20px;
+}
+
+.svg {
+  width: 25px;
+  height: 25px;
+  transition: 0.3s ease-in-out;
+}
+.svg path {
+  transition: all 0.3s ease-in-out;
+}
+
+.svg:hover path {
+  transition: all 0.3s ease-in-out;
+}
+
+.git:hover path {
+  fill: #fff;
+  stroke: #000;
+}
+
+.tg:hover path {
+  fill: #2d86fc;
+}
+
+.ln:hover path {
+  fill: #004bad;
+  stroke: #004bad;
+}
+
+.version {
+  color: var(--color-version);
+  align-self: flex-start;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140.1%;
+}

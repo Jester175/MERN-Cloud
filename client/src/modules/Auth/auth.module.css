@@ -1,0 +1,59 @@
+.auth {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-image: url("../../assets/images/authBg.png");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.cloud1,
+.cloud2,
+.cloud3,
+.cloud4,
+.cloud5 {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cloud1 path,
+.cloud2 path,
+.cloud3 path,
+.cloud4 path,
+.cloud5 path {
+  fill: var(--fill-cloud);
+  stroke: var(--stroke-cloud);
+}
+
+.cloud1 {
+  top: 30px;
+  left: 5%;
+}
+
+.cloud2 {
+  width: 100%;
+  max-width: 150px;
+  top: 30px;
+  left: 7%;
+}
+
+.cloud3 {
+  top: 50%;
+  left: 2%;
+}
+
+.cloud4 {
+  top: 20%;
+  left: 45%;
+}
+
+.cloud5 {
+  width: 100%;
+  max-width: 150px;
+  top: 20%;
+  left: 47%;
+}
