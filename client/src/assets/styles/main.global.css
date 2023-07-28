@@ -1,9 +1,14 @@
 :root {
   --text-color1: #ffffff;
   --text-color2: #000000;
+  --text-color3: #5c95ff;
+  --text-color4: #FFB110;
   --color-background-f1: #f5f5f5;
   --color-background-f2: #5c95ff;
   --color-background-f3: rgba(86, 125, 244, 0.1);
+  --color-background-f4: #CBE5E9;
+  --color-background-f5: #FFFBEC;
+  --color-background-popup: rgba(0, 0, 0, 0.5);
   --color-background-form: linear-gradient(
     140deg,
     rgba(255, 222, 108, 1) 0%,
