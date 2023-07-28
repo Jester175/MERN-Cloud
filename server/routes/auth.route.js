@@ -1,6 +1,7 @@
 import Router from "express";
 import authController from '../controller/authController.js'
 import { check } from 'express-validator'
+import authMiddleware from '../middleware/auth.middleware.js'
 
 const router = new Router();
 
@@ -10,5 +11,6 @@ router.post('/registration', [
     check('username', 'Username must be longer than 2 and shoeter than 10').isLength({ max: 10, min: 2 }),
 ], authController.registration);
 router.post('/login', authController.login);
+router.get('/auth', authMiddleware, authController.auth);
 
 export default router;
