@@ -15,5 +15,21 @@ export const CloudApi = {
         return axios.get(`${API_URL}/auth/auth`, {
             headers: { Authorization: `Bearer ${token}` }
         });
-    }
+    },
+
+    getFiles(dirId, token) {
+        return axios.get(`${API_URL}/file${dirId ? '?parent=' + dirId : ''}`, {
+            headers: { Authorization: `Bearer ${token}` }
+        });
+    },
+
+    createDir(dirId, token, name) {
+        return axios.post(`${API_URL}/file`, {
+            name,
+            parent: dirId,
+            type: 'dir'
+        }, {
+            headers: { Authorization: `Bearer ${token}` }
+        });
+    },
 }
