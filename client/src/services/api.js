@@ -9,5 +9,11 @@ export const CloudApi = {
 
     registration(email, password, username) {
         return axios.post(`${API_URL}/auth/registration`, { email, password, username });
+    },
+
+    auth(token) {
+        return axios.get(`${API_URL}/auth/auth`, {
+            headers: { Authorization: `Bearer ${token}` }
+        });
     }
 }

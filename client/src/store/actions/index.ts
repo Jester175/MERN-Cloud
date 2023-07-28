@@ -1,6 +1,7 @@
-import { registration, login } from "./user";
+import { registration, auth, login } from "./user";
 
 export default {
   registration,
   login,
+  auth,
 };
