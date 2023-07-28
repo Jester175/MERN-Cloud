@@ -40,7 +40,6 @@ export const auth = () =>
       const res = await CloudApi.auth(token);
       dispatch(setUser(res.data.user));
       localStorage.setItem("token", res.data.token);
-      alert('Пользователь унифицирован');
     } catch (error: any) {
       alert(error.response.data.message);
       localStorage.removeItem("token");
