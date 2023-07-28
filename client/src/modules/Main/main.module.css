@@ -1,0 +1,38 @@
+.disk {
+  padding: 50px 0px;
+}
+
+.disk__btns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.disk__control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 40px;
+  border-radius: 10px;
+  background: var(--color-background-f2);
+  color: var(--text-color1);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 154.3%;
+}
+
+.disk__back {
+  color: var(--text-color3);
+  background: #fff;
+  border: 1px solid var(--color-background-f2);
+}
+
+.disk__back svg {
+  transform: rotate(-180deg);
+}
+
+.disk__back svg path {
+  stroke: var(--text-color3);
+}
