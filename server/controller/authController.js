@@ -3,6 +3,8 @@ import bcryptjs from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import { validationResult } from 'express-validator';
+import fileServices from "../services/fileServices.js";
+import File from "../models/File.js";
 dotenv.config();
 
 class authController {
@@ -21,6 +23,7 @@ class authController {
             const hashPassword = await bcryptjs.hash(password, 8);
             const user = new User({ username, password: hashPassword, email });
             await user.save();
+            await fileServices.createDir(new File({ user: user.id, name: '' }));
             return res.status(201).json({ message: `User was created` });
         } catch (error) {
             console.log(error);

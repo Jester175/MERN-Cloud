@@ -1,7 +1,8 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv'
-import router from './routes/auth.route.js';
+import authRouter from './routes/auth.route.js';
+import fileRouter from './routes/file.route.js';
 import corsMiddleware from './middleware/cors.middleware.js'
 dotenv.config();
 
@@ -13,7 +14,8 @@ const DB_URL = `mongodb+srv://${USERNAME_DB}:${PASSWORD_DB}@cluster0.nedwf0a.mon
 
 app.use(corsMiddleware);
 app.use(express.json());
-app.use('/api/auth', router);
+app.use('/api/auth', authRouter);
+app.use('/api/file', fileRouter);
 
 
 const startApp = async () => {
