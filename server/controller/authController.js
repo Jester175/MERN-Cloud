@@ -53,6 +53,24 @@ class authController {
             res.status(500).send({ message: 'Server error' });
         }
     }
+
+    async auth(req, res) {
+        try {
+            const user = await User.findOne({ _id: req.user.id })
+            const token = jwt.sign({ id: user.id }, process.env.SECRET_KEY, { expiresIn: '1h' });
+            return res.status(200).json({
+                token,
+                user: {
+                    id: user.id,
+                    email: user.email,
+                    username: user.username
+                }
+            })
+        } catch (error) {
+            console.log(error);
+            res.status(500).send({ message: 'Server error' });
+        }
+    }
 }
 
 export default new authController();
