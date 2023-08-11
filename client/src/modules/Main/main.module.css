@@ -36,3 +36,14 @@
 .disk__back svg path {
   stroke: var(--text-color3);
 }
+
+.disk__upload-input {
+  display: none;
+}
+
+.disk__upload-label {
+  border: 2px solid var(--text-color2);
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}

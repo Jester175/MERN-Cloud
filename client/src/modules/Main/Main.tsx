@@ -12,7 +12,7 @@ import styles from "./main.module.css";
 
 export const Main: React.FC = () => {
   const dispatch = useDispatch();
-  const { getFiles } = useActions();
+  const { getFiles, uploadFile } = useActions();
   const { currentDir, dirStack } = useTypedSelector((state) => state.file);
   const [isPopup, setIsPopup] = useState<boolean>(false);
 
@@ -27,6 +27,11 @@ export const Main: React.FC = () => {
   const handleBackClick = () => {
     const backDirId = dirStack.pop();
     dispatch(setCurrentDir(backDirId));
+  };
+
+  const fileUploadHandler = (event: any) => {
+    const files = [...event.target.files];
+    files.forEach(file => uploadFile(currentDir, file));
   };
 
   return (
@@ -45,6 +50,21 @@ export const Main: React.FC = () => {
         >
           Create folder
         </button>
+        <div className={styles.disk__upload}>
+          <label
+            htmlFor="disk__upload-input"
+            className={styles["disk__upload-label"]}
+          >
+            Upload file
+          </label>
+          <input
+            onChange={(event) => fileUploadHandler(event)}
+            type="file"
+            multiple={true}
+            id="disk__upload-input"
+            className={styles["disk__upload-input"]}
+          />
+        </div>
       </div>
       <FileList />
       {isPopup && <Popup onClose={handleTogglePopup} />}

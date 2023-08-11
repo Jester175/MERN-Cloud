@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv'
 import authRouter from './routes/auth.route.js';
 import fileRouter from './routes/file.route.js';
+import fileUpload from 'express-fileupload';
 import corsMiddleware from './middleware/cors.middleware.js'
 dotenv.config();
 
@@ -12,6 +13,8 @@ const PASSWORD_DB = process.env.PASSWORD_DB;
 const USERNAME_DB = process.env.USERNAME_DB;
 const DB_URL = `mongodb+srv://${USERNAME_DB}:${PASSWORD_DB}@cluster0.nedwf0a.mongodb.net/?retryWrites=true&w=majority`
 
+
+app.use(fileUpload({}));
 app.use(corsMiddleware);
 app.use(express.json());
 app.use('/api/auth', authRouter);

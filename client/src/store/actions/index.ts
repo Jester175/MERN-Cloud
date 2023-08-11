@@ -1,5 +1,5 @@
 import { registration, auth, login } from "./user";
-import { getFiles, createDir } from "./file";
+import { getFiles, createDir, uploadFile } from "./file";
 
 export default {
   registration,
@@ -7,4 +7,5 @@ export default {
   auth,
   getFiles,
   createDir,
+  uploadFile,
 };

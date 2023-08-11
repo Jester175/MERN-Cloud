@@ -32,4 +32,18 @@ export const CloudApi = {
             headers: { Authorization: `Bearer ${token}` }
         });
     },
+
+    uploadFile(token, file) {
+        return axios.post(`${API_URL}/file/upload`, file, {
+            headers: { Authorization: `Bearer ${token}` },
+            onUploadProgress: progressEvent => {
+                const totalLength = progressEvent.lengthComputable ? progressEvent.total : (progressEvent.target && (progressEvent.target.getResponseHeader('content-length') || progressEvent.target.getResponseHeader('x-decompressed-content-length')));
+                console.log('total', totalLength);
+                if (totalLength) {
+                    let progress = Math.round((progressEvent.loaded * 100) / totalLength);
+                    console.log(progress);
+                }
+            }
+        });
+    },
 }
